@@ -1,0 +1,118 @@
+.heroBrand {
+    padding: 40px 0px;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-size: 54px;
+        font-weight: 700;
+        color: #333331;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+
+        &-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333331;
+        }
+
+        &-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: gray;
+
+            span {
+                color: black;
+            }
+        }
+
+        &-btn {
+          padding: 15px;
+          width: 240px;
+          border: 1px solid black;
+          border-radius: 40px;
+          background-color: white;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+
+          svg {
+            font-size: 18px;
+          }
+
+        }
+
+        &-btn:hover {
+            background-color: black;
+            color: white;
+            transition: .6s;
+            svg {
+                color: white;
+            }
+        }
+    }
+
+    @media (max-width:850px) {
+        &__title {
+          font-size: 34px;
+        }
+
+        &__info-title {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        &__info-text {
+           font-size: 16px;
+           font-weight: 300;
+        }
+    }
+
+    @media (max-width:700px) {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 340px) {
+        padding: 20px 0px;
+        &__title {
+            font-size: 24px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        &__info-title {
+           font-size: 18px;
+           font-weight: 400;
+           text-align: center;
+        }
+
+        &__info-text {
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        &__info {
+            align-items: center;
+        }
+
+        &__info-btn {
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,197 @@
+.prideArea {
+    padding: 50px 0px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        align-items: flex-start;
+
+        &-title {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 64px;
+            color: #333331;
+        }
+
+        &-text {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 32px;
+            color: gray;
+
+            span {
+                color: #333331;
+            }
+        }
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1.6fr 2fr;
+        gap: 20px;
+        align-items: flex-end;
+        padding: 40px 0px;
+
+        &-btn {
+            padding: 15px 30px;
+            border-radius: 40px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #333331;
+            background-color: #333331;
+            color: white;
+            transition: .5s;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                transition: left 0.6s;
+            }
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 35px rgba(51, 51, 49, 0.3);
+            }
+
+            &:hover:before {
+                left: 100%;
+            }
+
+            &:hover svg {
+                transform: rotate(45deg) scale(1.1);
+            }
+
+            svg {
+                transition: transform 0.3s ease;
+                font-size: 20px;
+            }
+
+
+        }
+
+        &-btn:hover {
+            background-color: #333331;
+            color: white;
+            transition: .5s;
+        }
+
+        &-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        &-card {
+            border: 1px solid #aaa6;
+            padding: 30px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &-img {
+                img {
+                    width: 220px;
+                    height: 240px;
+                    object-fit: contain;
+                }
+            }
+
+            &-title {
+                font-size: 16px;
+                font-weight: 400;
+                color: #333331;
+                padding-top: 30px;
+                text-align: center;
+            }
+        }
+
+        &-card:hover {
+            background-color: #333331;
+            transition: .6s;
+        }
+
+        &-card:hover .prideArea__bottom-card-title {
+            color: white;
+            transition: .6s;
+        }
+    }
+
+    @media (max-width:1170px) {
+        &__bottom {
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+    }
+
+    @media (max-width:1050px) {
+        &__top-title {
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 46px;
+        }
+
+        &__top-text {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+
+        }
+    }
+
+    @media (max-width:900px) {
+        &__top-title {
+            font-size: 28px;
+            line-height: 34px;
+        }
+
+        &__top-text {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    @media (max-width:850px) {
+        &__bottom-card-img img {
+            width: 100%;
+        }
+    }
+
+    @media (max-width:700px) {
+        &__bottom-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width:500px) {
+        padding: 20px 0px;
+
+        &__top {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width:450px) {
+        &__bottom-cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__bottom-btn {
+            font-size: 12px;
+            width: 100%;
+        }
+    }
+}
